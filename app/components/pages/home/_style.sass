@@ -1,0 +1,989 @@
+.wrap
+  width: 100%
+  height: 100vh
+  display: flex
+  //padding: 50px 0 50px 30px
+  padding: 2.28vh 0 2.7vh
+  justify-content: space-between
+  overflow: hidden
+  overflow-x: auto
+  align-items: center
+.left
+  min-width: 26.05vh
+  width: calc(100% - 90.87vh - 20.2vh)
+  padding-right: 3.2vh
+  padding-bottom: 1.64vh
+.right
+  min-width: 20.2vh
+  width: calc(100% - 90.87vh - 26.05vh)
+  margin: 0.329vh 0
+  padding-left: 3.2vh
+.center
+  display: flex
+  align-items: center
+  .row:nth-child(2)
+    height: calc(100% - (8.553vh * 2) - (0.329vh * 4))
+.process
+  border-radius: 1.32vh
+  background-color: #ffffff
+  padding: 1.64vh 0.66vh
+  &-ul
+    padding: 0 0.66vh
+    overflow-y: auto
+    height: calc(79vh)
+  &-bookmark
+    width: 1.3vh
+    height: 1.3vh
+    position: absolute
+    left: 0
+    top: 0
+  &-row
+    display: flex
+    position: relative
+    padding: 1.3vh 1.3vh 0.66vh 1.3vh
+    border-radius: 0.66vh
+    overflow: hidden
+    background-color: #f6f7fa
+    margin-bottom: 0.66vh
+    &:last-child
+      margin-bottom: 0
+  &-img
+    object-fit: cover
+    width: 2.96vh
+    height: 2.96vh
+    border-radius: 0.66vh
+    margin-right: 0.53vh
+  &-time
+    position: absolute
+    right: 0
+    top: 0
+    color: #4f5567
+    font-family: "FuturaPT-Book", sans-serif
+    font-size: 1.32vh
+    font-weight: 400
+    line-height: 1.64vh
+    background: #ffffff
+    padding: 0 0.7vh
+  &-name, &-text
+    color: #4f5567
+    font-family: "FuturaPT-Book", sans-serif
+    font-size: 1.65vh
+    font-weight: 400
+    line-height: 1.97vh
+  &-name
+    font-family: "FuturaPT-Demi", sans-serif
+
+.tooltip
+  position: absolute
+  border: 0.26vh solid #d7e0e9
+  background-color: #ffffff
+  padding: 0.7vh 2.5vh 0.8vh 1.32vh
+  min-width: 23vh
+  z-index: 99
+  border-radius: 1.32vh
+  opacity: 0
+  pointer-events: none
+  transition: all 0.3s ease
+  &:before, &:after
+    content: ''
+    position: absolute
+    width: 0
+    height: 0
+    border-style: solid
+  &-title,  &-name, &-text, &-price, &-percent
+    color: #4f5567
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.84vh
+
+  &-name
+    color: #06af22
+    margin-top: 0.5vh
+  &-row
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-top: 0.66vh
+    align-items: center
+    &:first-child
+      margin-bottom: 0.7vh
+    .tooltip-text
+      display: flex
+      justify-content: space-between
+      width: 100%
+  &-text
+    line-height: 1
+    font-family: "FuturaPT-Book", sans-serif
+    font-weight: 300
+    margin-top: 0.7vh
+  &-price
+    line-height: 1
+  &-house
+    display: flex
+  &-icon
+    width: 1.65vh
+    height: 1.45vh
+    margin: 0 0.3vh 0 0
+    opacity: 1
+  &-col
+    margin-top: 0.8vh
+  &-bottom
+    display: flex
+    align-items: center
+    margin-top: 0.5vh
+    justify-content: space-between
+  &-line
+    width: 60%
+    height: 0.4vh
+    border-radius: 0.2vh
+    background-color: #f6f7fa
+    position: relative
+    overflow: hidden
+    margin-right: 1.4vh
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 62%
+      height: 100%
+      border-radius: 0.2vh
+      background-color: #06af22
+  &-percent
+    color: #4f5567
+    font-weight: 400
+.card
+  width: 8.553vh
+  height: 8.553vh
+  box-shadow: 0 0 10px rgba(170, 196, 223, 0.21)
+  border-radius: 1.32vh
+  background-color: #ffffff
+  position: relative
+  display: inline-flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin: 0.329vh
+  border-width: 0 0 0.4vh 0
+  border-style: solid
+  border-color: transparent
+  &:hover
+    .tooltip
+      opacity: 1
+      pointer-events: auto
+  &-strong
+    color: #767c8f
+    font-family: "FuturaPT-Heavy", sans-serif
+    font-size: 2.63vh
+    font-weight: 400
+    line-height: 1.64vh
+    text-transform: uppercase
+    &_question
+      font-size: 3.95vh
+  &.notbought
+    .card-img img
+      opacity: 0.3
+  &.disabled
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: calc(100% + 0.4vh)
+      border-radius: 1.32vh
+      background-color: rgba(#edf2f7, 0.8)
+      z-index: 9
+  &.gradient-red.notbought
+    opacity: 0.3
+    img
+      opacity: 1
+  &-price
+    color: #767c8f
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.45vh
+    font-weight: 400
+    line-height: 1.64vh
+    width: calc(100% - 1.97vh)
+    text-align: center
+  &-right, &-top
+    position: absolute
+    top: 0
+    color: #ffffff
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.45vh
+    font-weight: 400
+    line-height: 1.58vh
+  &-top
+    left: 0
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+  &-right
+    right: 0
+    height: 100%
+    writing-mode: vertical-lr
+    transform: rotate(360deg)
+    text-align: center
+  &-bookmark
+    width: 1.97vh
+    height: 1.97vh
+    background-color: #d7e0e9
+    border-radius: 0 1.32vh 0 0
+  .card-img img
+    margin-top: 0.39vh
+    position: relative
+    z-index: 1
+  &-triangle
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: url("../img/triangle.svg") no-repeat center / cover
+  &-home
+    overflow: visible
+    visibility: visible
+    position: absolute
+    box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+    background-color: #f6f8fb
+    border-radius: 1.32vh
+    z-index: -1
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 0.73vh 0.2vh
+    top: 0
+    left: 0
+    &-row
+      display: flex
+      justify-content: center
+    &-img
+      opacity: 1
+      margin: 0.13vh
+      width: 2.17vh
+      height: 1.84vh
+      &.size
+        width: 1.3vh
+        height: 1.12vh
+
+.row
+  display: flex
+  justify-content: space-between
+  width: 100%
+.balls-position
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+.balls
+  &-item
+    width: 2.24vh
+    height: 1.7vh
+    margin-left: -0.8vh
+    margin-bottom: -0.3vh
+.col
+  &-left, &-right
+    display: flex
+    flex-direction: column
+  &-center
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background: url("../img/city.png") no-repeat bottom right / 66%
+    .row
+      position: relative
+      .card-home
+        height: calc(100% + 2.5vh + 0.4vh)
+        width: 100%
+        display: flex
+        flex-direction: row
+      &:first-child
+        z-index: 2
+        .card-home
+          padding-top: calc(100% + 0.13vh + 0.4vh)
+        .tooltip
+          top: calc(100% + 1vh)
+          left: 0
+          border-radius: 0 1.32vh 1.32vh 1.32vh
+          &:before
+            bottom: calc(100% + 0.26px)
+            left: -0.26vh
+            border-width: 1.6vh 0 0 1.7vh
+            border-color: transparent transparent transparent  #d7e0e9
+          &:after
+            bottom: calc(100% - 0.52vh)
+            left: 0
+            border-width: 1.5vh 0 0 1.68vh
+            border-color: transparent transparent transparent #ffffff
+        .card
+          &:nth-last-child(2), &:last-child
+            .tooltip
+              left: auto
+              right: 0
+              border-radius: 1.32vh  0 1.32vh 1.32vh
+              &:before
+                left: auto
+                right: -0.26vh
+                border-width: 0 0 1.6vh 1.7vh
+                border-color: transparent transparent #d7e0e9 transparent
+              &:after
+                left: auto
+                right: 0
+                border-width: 0 0 1.5vh 1.68vh
+                border-color: transparent transparent #ffffff transparent
+          .balls-position
+            width: 100%
+            bottom: 100%
+            right: -0.2vh
+      &:last-child
+        z-index: 2
+        .card-home
+          left: 0
+          top: auto
+          bottom: 0
+          padding-bottom: calc(100% + 0.13vh + 0.4vh)
+        .tooltip
+          bottom: calc(100% + 1vh)
+          left: 0
+          border-radius: 1.32vh 1.32vh 1.32vh 0
+          &:before
+            top: 100%
+            left: -0.26vh
+            border-width: 1.6vh 1.7vh 0 0
+            border-color: #d7e0e9 transparent transparent transparent
+          &:after
+            top: calc(100% - 0.5vh)
+            left: 0
+            border-width: 1.5vh 1.68vh 0 0
+            border-color: #ffffff transparent transparent transparent
+        .card
+          &:last-child, &:nth-last-child(2)
+            .tooltip
+              left: auto
+              right: 0
+              border-radius: 1.32vh 1.32vh 0 1.32vh
+              &:before
+                left: auto
+                right: -0.26vh
+                border-width: 0 1.6vh 1.7vh 0
+                border-color: transparent  #d7e0e9 transparent transparent
+              &:after
+                left: auto
+                right: 0
+                border-width: 0 1.5vh 1.68vh 0
+                border-color: transparent #ffffff transparent transparent
+          .balls-position
+            width: 100%
+            top: calc(100% + 0.8vh)
+            right: -0.2vh
+  &-left
+    .balls-position
+      right: 100%
+      &:first-child
+        bottom: -0.4vh
+        flex-direction: column
+        height: 100%
+      &:nth-child(2)
+        width: 100%
+        top: calc(100% + 0.8vh)
+        right: 0
+    .card-home
+      height: calc(100% + 0.4vh)
+      width: calc(100% + 2.5vh)
+      padding-left: calc(100% + 0.13vh)
+    .tooltip
+      left: calc(100% + 1vh)
+      bottom: -0.4vh
+      border-radius: 1.32vh 1.32vh 1.32vh 0
+      &:before
+        right: 100%
+        bottom: -0.26vh
+        border-width: 0 0 1.6vh 1.7vh
+        border-color: transparent transparent #d7e0e9 transparent
+      &:after
+        right: calc(100% - 0.52vh)
+        bottom: 0
+        border-width: 0 0 1.5vh 1.68vh
+        border-color: transparent transparent #ffffff transparent
+    .card
+      &:first-child
+        .balls-position:nth-child(2)
+          right: -0.4vh
+          bottom: 100%
+          top: auto
+      &:nth-child(3), &:nth-child(4)
+        .tooltip
+          bottom: auto
+          top: 0
+          border-radius: 0 1.32vh 1.32vh 1.32vh
+          &:before
+            top: -0.26vh
+            border-width: 0 1.6vh 1.7vh 0
+            border-color: transparent #d7e0e9 transparent transparent
+          &:after
+            top: 0
+            border-width: 0 1.5vh 1.68vh 0
+            border-color: transparent #ffffff transparent transparent
+
+  &-right
+    .card-home
+      right: 0
+      left: auto
+      height: calc(100% + 0.4vh)
+      width: calc(100% + 2.5vh)
+      padding-right: calc(100% + 0.13vh)
+    .card:nth-child(2), .card:nth-child(3)
+      .tooltip
+        top: 0
+        bottom: auto
+        border-radius: 1.32vh 0 1.32vh 1.32vh
+        &:before
+          left: 100%
+          top: -0.26vh
+          bottom: auto
+          border-width: 1.7vh 1.6vh 0 0
+          border-color: #d7e0e9 transparent transparent transparent
+        &:after
+          left: calc(100% - 0.52vh)
+          top: 0
+          bottom: auto
+          border-width: 1.68vh 1.5vh 0 0
+          border-color: #ffffff transparent transparent transparent
+    .tooltip
+      right: calc(100% + 1vh)
+      bottom: -0.4vh
+      border-radius: 1.32vh 1.32vh 0 1.32vh
+      &:before
+        left: 100%
+        bottom: -0.26vh
+        border-width: 1.7vh 0 0 1.6vh
+        border-color: transparent transparent transparent #d7e0e9
+      &:after
+        left: calc(100% - 0.52vh)
+        bottom: 0
+        border-width: 1.68vh 0 0 1.5vh
+        border-color: transparent transparent transparent #ffffff
+    .balls-position
+      &:first-child
+        left: calc(100% + 0.4vh)
+        height: 100%
+        top: 0.2vh
+        flex-direction: column
+      &:nth-child(2)
+        width: 100%
+        top: calc(100% + 0.8vh)
+        right: -0.2vh
+    .card:first-child
+      .balls-position
+        &:first-child
+          left: 0.4vh
+        &:nth-child(2)
+          top: auto
+          bottom: 0
+.cubes
+  background: url("../img/shadow.png") no-repeat center / 100%
+  width: 36.1vh
+  height: 26.3vh
+  margin-bottom: -3.95vh
+  margin-left: -3.95vh
+
+.main
+  padding: 3.95vh
+  display: flex
+  justify-content: space-between
+  width: 100%
+  height: 100%
+  &-col
+    max-width: 48.7vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+.condition
+  display: none
+  width: 100%
+  &.active
+    display: block
+.action
+  margin-bottom: 1.58vh
+  &-btns
+    display: flex
+    button
+      border-radius: 1.32vh
+      width: calc(50% - 0.56vh)
+      margin-right: 1.12vh
+      height: 5.92vh
+      font-family: "FuturaPT-Medium", sans-serif
+      font-size: 1.97vh
+      font-weight: 500
+      font-stretch: normal
+      font-style: normal
+      line-height: 1.65vh
+      letter-spacing: 0.4vh
+      text-align: center
+      color: #4f5567
+      position: relative
+      text-transform: uppercase
+      box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+      &:last-child
+        margin: 0
+  &-block
+    border-radius: 1.32vh
+    background: #ffffff
+    padding: 1.97vh 3.62vh
+    width: 100%
+    margin-bottom: 1.45vh
+  &-text
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.97vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: 2.63vh
+    letter-spacing: normal
+    color: #4f5567
+button.btn-action
+  box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+  background-image: linear-gradient(-140deg, #0caaa2, #009dce)
+  color: #ffffff
+  &-active
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    top: 1.18vh
+    height: 5.92vh
+    opacity: 0
+    border-radius: 1.32vh
+    box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+    background-image: linear-gradient(-140deg, #0caaa2, #009dce)
+    transition: all 0.3s ease
+    z-index: -1
+    width: calc(100% - 2.35vh)
+  &:before, &:after
+    content: ''
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    top: 0.4vh
+    width: calc(100% - 0.75vh)
+    height: 5.92vh
+    opacity: 0.2
+    border-radius: 1.32vh
+    box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+    background-image: linear-gradient(-140deg, #0caaa2, #009dce)
+    transition: all 0.3s ease
+    z-index: -1
+  &:after
+    top: 0.8vh
+    width: calc(100% - 1.55vh)
+.close
+  width: 3.62vh
+  height: 2.63vh
+  border-radius: 1.32vh 1.32vh 0 0
+  background-color: #ffffff
+  position: relative
+  cursor: pointer
+  &:before, &:after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%) rotate(45deg)
+    background-color: #d7e0e9
+    width: 1.2vh
+    height: 0.26vh
+  &:after
+    height: 1.2vh
+    width: 0.26vh
+.chat
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  &-container
+    background: #ffffff
+    border-radius: 1.32vh 0 1.32vh 1.32vh
+  &-top, &-tabs
+    display: flex
+    align-items: flex-end
+  &-tabs
+    width: calc(100% - 2vh)
+  &-left
+    background-color: #d7e0e9
+    transform: rotate(180deg)
+    writing-mode: vertical-lr
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.5vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: normal
+    letter-spacing: normal
+    color: #4f5567
+    width: 2vh
+    height: 5vh
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 0 0 1.32vh 0
+  &-tab
+    font-family: "FuturaPT-Demi", sans-serif
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    font-size: 1.5vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: 2vh
+    letter-spacing: normal
+    color: #4f5567
+    border-bottom: 0.26vh solid #d7e0e9
+    width: 100%
+    cursor: pointer
+    padding-bottom: 0.33vh
+    &.active
+      border-color: #fa5555
+  &-window
+    padding: 1.3vh 1vh
+  &-messages
+    height: 30vh
+    overflow: hidden
+    overflow-y: auto
+  &-bottom
+    width: 100%
+    border-top: 0.26vh solid #d7e0e9
+    padding: 1.4vh 1.9vh 1.4vh 3.48vh
+    &-row
+      position: relative
+      height: 4vh
+      border-radius: 0.66vh
+      overflow: hidden
+  &-textarea
+    width: 100%
+    background-color: #edf2f7
+    overflow-y: auto
+    padding: 0.8vh
+    height: 100%
+  &-send
+    position: absolute
+    right: 0
+    bottom: 0
+    background-color: #d7e0e9
+    width: 2vh
+    height: 2vh
+    padding: 0.3vh
+.message
+  display: flex
+  width: 100%
+  padding: 0.9vh 0 0 0
+  &-point
+    width: 1.58vh
+    height: 1.58vh
+    display: block
+    border-radius: 0.26vh
+  &-col
+    width: calc(100% - 1.58vh)
+    padding: 0 0.9vh
+  &-row
+    display: flex
+  &-text
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.2vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: 1.65vh
+    letter-spacing: normal
+    text-align: left
+    color: #4f5567
+    &_time
+      text-align: right
+  &-content
+    border-radius: 0.66vh 0 0.66vh 0.66vh
+    background-color: #edf2f7
+    margin: 0.8vh 0 1.2vh
+    padding: 0.98vh 3vh 0.9vh 0.7vh
+    position: relative
+    &_first
+      border-radius: 0 0.66vh 0.66vh 0.66vh
+    .message-text
+      font-size: 1.78vh
+      line-height: 2vh
+
+.settings
+  position: absolute
+  right: 0
+  top: 0
+  padding: 0.46vh
+  cursor: pointer
+  &-item
+    width: 0.26vh
+    height: 0.26vh
+    margin: 0.13vh
+    border-radius: 0.13vh
+    background-color: #d7e0e9
+    position: relative
+    z-index: 3
+  &-menu
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 2
+    border-radius: 0.66vh
+    box-shadow: 0 0 10px 0 rgba(170, 196, 223, 0.42)
+    background-color: #ffffff
+    width: max-content
+    padding: 0.72vh 0.9vh 1vh 1.5vh
+    display: none
+  &-list
+    font-family: "FuturaPT-Book", sans-serif
+    font-size: 1.32vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: 2vh
+    letter-spacing: normal
+    color: #767d90
+    position: relative
+    transition: all 0.3s ease
+    padding-left: 1vh
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 0.5vh
+      height: 0.5vh
+      border-radius: 0.26vh
+      background-color: transparent
+      transition: all 0.3s ease
+    &:hover, &:focus
+      color: #4f5567
+      &:before
+        background-color: #4f5567
+.player
+  &-name, &-price
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 1.58vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: 1.65vh
+    letter-spacing: normal
+    color: #4f5567
+    display: block
+    white-space: nowrap
+  &-price
+    margin-top: 1.05vh
+  &-col
+    border-radius: 1.32vh
+    padding: 1.04vh 1.58vh
+    width: fit-content
+    border-width: 0 0 0 0.4vh
+    border-style: solid
+    transition: all 0.3s ease
+  &-img
+    width: 6.58vh
+    height: 6.58vh
+    border-radius: 1.32vh
+    margin-bottom: 0.85vh
+  &-item
+    border-radius: 1.32vh 0 0 1.32vh
+    box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+    background-color: #ffffff
+    margin-bottom: 1.64vh
+    border-width: 0.4vh
+    border-color: transparent
+    cursor: pointer
+    height: 13.8vh
+    &.active
+      .player-col
+        border-width: 0 0.4vh 0 0
+        background: #edf2f7
+        padding-left: 1.98vh
+      &.height
+        .player-col
+          width: 100%
+        .player-info
+          border-width: 0 0.4vh 0 0
+          padding-left: 1.98vh
+          background: #edf2f7
+    &.height
+      .player-info
+        height: auto
+        opacity: 1
+    &.show
+      display: flex
+      .player-info
+        opacity: 1
+        margin-top: 0
+        display: flex
+        flex-wrap: wrap
+        padding-left: 0
+        height: auto
+        transition: opacity 0.3s ease
+        border-color: transparent!important
+      .player-text
+        width: 50%
+        span
+          width: auto
+          margin-right: 0.66vh
+
+    &:last-child
+      margin-bottom: 0
+    &:first-child
+      .player-col, .player-info
+        border-color: #fa5555
+
+    &:nth-child(2)
+      .player-col, .player-info
+        border-color: #fe8a01
+    &:nth-child(3)
+      .player-col, .player-info
+        border-color: #fcdf3b
+    &:nth-child(4)
+      .player-col, .player-info
+        border-color: #88cf19
+    &:nth-child(5)
+      .player-col, .player-info
+        border-color: #42b9f1
+    &:nth-child(6)
+      .player-col, .player-info
+        border-color: #7b5ddd
+      &.height
+        transform: translateY(-16.1vh)
+        .player-info
+          pointer-events: auto
+      &.show
+        display: flex
+        &.height
+          transform: translateY(0)
+        .player-info
+          opacity: 1
+          margin-top: 0
+          display: flex
+          flex-wrap: wrap
+          padding-left: 0
+          height: auto
+          transition: opacity 0.3s ease
+          border-color: transparent!important
+        .player-text
+          width: 50%
+          span
+            width: auto
+            margin-right: 10px
+
+  &-block
+    position: relative
+  &-ignore
+    position: absolute
+    right: -1.04vh
+    top: -1.04vh
+    width: 2.24vh
+    height: 2.24vh
+  &-text
+    display: flex
+    width: 100%
+    color: #4f5567
+    font-size: 1.65vh
+    line-height: 2vh
+    margin-bottom: 0.6vh
+    span
+      width: 50%
+    &_left
+      font-family: "FuturaPT-Book", sans-serif
+      font-weight: 400
+    &_right
+      font-family: "FuturaPT-Demi", sans-serif
+  &-info
+    position: relative
+    z-index: 9
+    border-radius: 0 0 1.32vh 1.32vh
+    padding: 1.04vh 1.58vh
+    margin-top: -1.1vh
+    background: #ffffff
+    width: 100%
+    border-width: 0 0 0 0.4vh
+    border-style: solid
+    height: 0
+    opacity: 0
+    transition: all 0.3s ease
+    pointer-events: none
+.orange
+  background-color: #fe8a01
+.purple
+  background-color: #7b5ddd
+.red
+  background-color: #fa5555
+.green
+  background-color: #88cf19
+.yellow
+  background-color: #fcdf3b
+.blue
+  background-color: #42b9f1
+.b-blue
+  border-color: #5dcefd
+  .tooltip-line:before
+    background: #5dcefd
+  .tooltip-name
+    color: #5dcefd
+.b-red
+  border-color: #df1855
+  .tooltip-line:before
+    background: #df1855
+  .tooltip-name
+    color: #df1855
+.b-green
+  border-color: #06af22
+  .tooltip-line:before
+    background: #06af22
+  .tooltip-name
+    color: #06af22
+.b-black
+  border-color: #030303
+  .tooltip-line:before
+    background: #030303
+  .tooltip-name
+    color: #030303
+.b-brown
+  border-color: #bb7609
+  .tooltip-line:before
+    background: #bb7609
+  .tooltip-name
+    color: #bb7609
+.b-purple
+  border-color: #b913dc
+  .tooltip-line:before
+    background: #b913dc
+  .tooltip-name
+    color: #b913dc
+.b-pink
+  border-color: #fd55ad
+  .tooltip-line:before
+    background: #fd55ad
+  .tooltip-name
+    color: #fd55ad
+.b-turquoise
+  border-color: #1bb39f
+  .tooltip-line:before
+    background: #1bb39f
+.b-burgundy
+  border-color: #941919
+  .tooltip-line:before
+    background: #941919
+  .tooltip-name
+    color: #941919
+.b-swampy
+  border-color: #749217
+  .tooltip-line:before
+    background: #749217
+  .tooltip-name
+    color: #749217
+.b-navyblue
+  border-color: #3f49c3
+  .tooltip-line:before
+    background: #3f49c3
+  .tooltip-name
+    color: #3f49c3

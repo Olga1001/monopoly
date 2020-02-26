@@ -1,0 +1,298 @@
+@import "fonts"
+@import "vars"
+
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+  font-family: "FuturaPT-Book", sans-serif
+  font-size: 1.5vh
+  font-weight: normal
+  font-stretch: normal
+  font-style: normal
+  line-height: 2vh
+  letter-spacing: normal
+  color: #4f5567
+
+*:-moz-placeholder
+  font-family: "FuturaPT-Book", sans-serif
+  font-size: 1.5vh
+  font-weight: normal
+  font-stretch: normal
+  font-style: normal
+  line-height: 2vh
+  letter-spacing: normal
+  color: #4f5567
+
+*::-moz-placeholder
+  font-family: "FuturaPT-Book", sans-serif
+  font-size: 1.5vh
+  font-weight: normal
+  font-stretch: normal
+  font-style: normal
+  line-height: 2vh
+  letter-spacing: normal
+  color: #4f5567
+
+*:-ms-input-placeholder
+  font-family: "FuturaPT-Book", sans-serif
+  font-size: 1.5vh
+  font-weight: normal
+  font-stretch: normal
+  font-style: normal
+  line-height: 2vh
+  letter-spacing: normal
+  color: #4f5567
+*::-webkit-scrollbar
+  width: 3px
+  border-radius: 3px
+  background-color: #f6f7fa
+*::-webkit-scrollbar-thumb
+  border-radius: 2px
+  background-color: #767c8f
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #4f5567
+
+body input:required:valid,
+body textarea:required:valid
+  color: #4f5567
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ''
+  content: none
+
+a
+  outline: none
+  text-decoration: none
+a[href^="tel"]
+  color: inherit
+  text-decoration: none
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+body
+  font-size: 20px
+  position: relative
+  line-height: normal
+  background-color: #edf2f7
+  font-family: "FuturaPT-Book", sans-serif
+img
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: contain
+
+input, textarea
+  border: none
+  outline: none
+  font-family: "FuturaPT-Book", sans-serif
+  font-size: 1.5vh
+  font-weight: normal
+  font-stretch: normal
+  font-style: normal
+  line-height: 2vh
+  letter-spacing: normal
+  color: #4f5567
+
+button
+  cursor: pointer
+  outline: none
+  border: none
+  background: #ffffff
+  text-transform: uppercase
+
+.btn
+  width: 26.25vh
+  height: 8.55vh
+  border-radius: 1.32vh
+  border: solid 0.53vh transparent
+  background-color: #ffffff
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 1.3vh
+  font-family: "FuturaPT-Medium", sans-serif
+  font-size: 1.97vh
+  font-weight: 500
+  font-stretch: normal
+  font-style: normal
+  line-height: 1
+  letter-spacing: 0.39vh
+  text-align: center
+  text-transform: uppercase
+  color: #4f5567
+  position: relative
+  transition: all 0.3s ease
+  svg
+    width: 3.95vh
+    display: block
+    margin-right: 0.72vh
+  &-cube
+    height: 3.1vh
+  &-deals
+    height: 2.2vh
+  &-cards
+    height: 2.37vh
+  &-giveup
+    height: 2.43vh
+  &-active
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    top: 1.18vh
+    width: calc(100% - 2.35vh + 0.53vh)
+    height: 8.02vh
+    opacity: 0
+    border-radius: 1.32vh
+    box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+    background-image: linear-gradient(to left, #e53b63, #fe6542)
+    transition: all 0.3s ease
+    z-index: -1
+  &:focus, &.active
+    box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+    background-image: linear-gradient(to left, #e53b63, #fe6542)
+    border-color: transparent
+    color: #ffffff
+    transition: 0s
+    path, ellipse
+      fill: #ffffff
+    &:hover
+      border-color: transparent
+    .btn-active
+      opacity: 0.2
+    &:before, &:after
+      content: ''
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: 0.4vh
+      width: calc(100% - 0.75vh  + 0.53vh)
+      height: 8.02vh
+      opacity: 0.2
+      border-radius: 1.32vh
+      box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
+      background-image: linear-gradient(to left, #e53b63, #fe6542)
+      transition: all 0.3s ease
+      z-index: -1
+    &:after
+      top: 0.8vh
+      width: calc(100% - 1.55vh + 0.53vh)
+  &:hover
+    border-color: #d7e0e9
+  &.disabled
+    background-color: #ced9e5
+    border-color: #ced9e5
+    color: #ffffff
+    &:hover, &:focus, &.active
+      background: #a6b8c9
+      border-color: #a6b8c9
+      &:before, &:after
+        content: none
+
+.img
+  &-time
+    height: 10.26vh
+    width: 100%
+    margin-bottom: 1vh
+  &-start, &-arrow
+    height: 3.22vh
+  &-google
+    height: 2.1vh
+  &-visa
+    height: 3.1vh
+  &-microsorf, &-relaxation
+    height: 4.01vh
+  &-toyota
+    height: 3.82vh
+  &-bmw
+    height: 4.34vh
+  &-audi
+    height: 3.03vh
+  &-real
+    height: 5.07vh
+  &-snickers, &-amazon
+    height: 1.64vh
+  &-mm
+    height: 1.58vh
+  &-aliexpress
+    height: 1.51vh
+  &-ebay
+    height: 2.17vh
+  &-bayern
+    height: 4.6vh
+  &-jail
+    height: 3.62vh
+  &-kfc
+    height: 2.04vh
+  &-burger
+    height: 4.41vh
+  &-mcdonalds
+    height: 3.75vh
+  &-braun
+    height: 2.24vh
+  &-mastercard
+    height: 2.83vh
+  &-philips
+    height: 4.08vh
+  &-bosch
+    height: 3.82vh
+  &-manchester
+    height: 4.28vh
+  &-aple
+    height: 3.95vh
+  &-sumsung
+    height: 2.11vh
+  &-huawei
+    height: 4.01vh
+  &-disney
+    height: 2.57vh
+  &-paramount
+    height: 3.62vh
+  &-warnerbros
+    height: 4.34vh
+  &-barcelona
+    height: 4.61vh
+  &-dollar
+    height: 3.5vh
+  &-exchange
+    width: 5.3vh
+    height: 5.3vh
+    position: relative
+    right: 0
+.gradient
+  &-red
+    background-image: linear-gradient(-105deg, #e53b63 0%, #fe6542 100%)
+
+@import "../components/pages/home/style"
+@import "../components/pages/deal/style"
+
+@import "media"
+// Всегда в конце
