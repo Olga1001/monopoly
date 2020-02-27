@@ -1,0 +1,72 @@
+.roulette
+  padding: 3.9vh
+  display: flex
+  width: 100%
+  justify-content: flex-end
+  &-container
+    max-width: 49vh
+    width: 100%
+  &-row
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+  &-play
+    border-radius: 1.32vh
+    background-color: #ffffff
+    margin: 1vh 0 3.2vh
+    padding: 1.3vh 0
+    &_row
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      margin-bottom: 1.3vh
+      &:last-child
+        margin-bottom: 0
+  &-title
+    color: #4f5567
+    font-family: "FuturaPT-Demi", sans-serif
+    font-size: 2vh
+  &-text
+    color: #4f5567
+    font-family: "FuturaPT-Book", sans-serif
+    font-size: 1.5vh
+    line-height: 1
+    padding-right: 2.3vh
+  &-col
+    padding-left: 2.3vh
+    width: 50%
+    display: flex
+  &-input
+    border-radius: 0.3vh
+    border: 0.1vh solid #d7e0e9
+    width: 10vh
+    padding: 0.3vh 0.5vh
+    font-family: "FuturaPT-Book", sans-serif
+    font-size: 1.5vh
+    font-weight: normal
+    font-stretch: normal
+    font-style: normal
+    line-height: 2vh
+    letter-spacing: normal
+    color: #4f5567
+  &-checkboxes
+    display: flex
+    width: 50%
+    padding-left: 2.3vh
+  &-check
+    width: 2vh
+    height: 2vh
+    display: block
+    position: relative
+    z-index: 2
+  label
+    position: relative
+    margin-right: 1.3vh
+    border-radius: 0.3vh
+    &:first-child
+      background-color: #e53c62
+    &:last-child
+      background-color: #010101
+.checkbox:checked ~ .roulette-check
+  background: url("../img/check.svg") no-repeat center / 50%

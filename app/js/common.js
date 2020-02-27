@@ -17,18 +17,37 @@ $(document).ready(function () {
     $('.close').click(function() {
         $(this).closest(".chat").hide();
     });
-    if($(".player-item").width() >= (390 * 100 / 1520)){
-        $(this).addClass('flex');
-    } else {
-        $(".player-item").removeClass('flex');
-    }
+
     $('.player-item, .player-item.height').hover(function() {
         $(this).toggleClass('height');
     });
 
-    if($(".players").width() >= 460){
-        $(".player-item").addClass('show');
-    } else {
+
+    let widthPlace = $(".player-item").width() - $(".player-col").width();
+    if($(".player-info_container").width() >= widthPlace){
         $(".player-item").removeClass('show');
+    } else {
+        $(".player-item").addClass('show');
     }
+
+    tippy('.card-price', {
+        content: 'Lorem ipsum dolor sit amet ',
+        placement: 'top',
+        theme: 'bg-medium',
+    });
+    tippy('.card-bookmark', {
+        content: 'Lorem ipsum dolor sit amet ',
+        placement: 'bottom-start',
+        theme: 'bg-strong',
+    });
+    tippy('.balls-item', {
+        content: 'Lorem ipsum dolor sit amet ',
+        placement: 'bottom',
+        theme: 'bg-light',
+    });
+    tippy('.card-img', {
+        content: 'Lorem ipsum dolor sit amet ',
+        placement: 'right',
+        theme: 'bg-light',
+    });
 });

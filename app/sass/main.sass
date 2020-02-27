@@ -121,7 +121,12 @@ input, textarea
   line-height: 2vh
   letter-spacing: normal
   color: #4f5567
-
+  appearance: none
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+input[type=number]
+  -moz-appearance: textfield
 button
   cursor: pointer
   outline: none
@@ -287,12 +292,73 @@ button
     height: 5.3vh
     position: relative
     right: 0
+  &-freezing
+    height: 5.8vh
+  &-trap
+    height: 4.1vh
+  &-hurricane
+    height: 5.4vh
+  &-horseshoe
+    height: 5.3vh
+  &-teleport, &-expansion
+    height: 5.85vh
+  &-exemptionact
+    height: 5.9vh
+  &-roulette
+    height: 4vh
+    width: 4vh
+    margin-right: 1.6vh
 .gradient
   &-red
     background-image: linear-gradient(-105deg, #e53b63 0%, #fe6542 100%)
+.bg-light
+  background: #edf2f7
+  color: #4f5567
+.bg-medium-theme
+  background: #a8b9ce
+  color: #4f5567
+.bg-strong-theme
+  background: #666a78
+  color: #ffffff
+.bg-light-theme
+  background-color: #edf2f7
+  color: #4f5567
+.tippy-tooltip
+  border-radius: 0.4vh
+.tippy-content
+  font-size: 1.5vh
+  line-height: 2vh
+  padding: 0.4vh 0.6vh
 
+.tippy-tooltip.bg-medium-theme[data-placement^='top'] .tippy-arrow
+  border-top-color: #a8b9ce
+.tippy-tooltip.bg-strong-theme[data-placement^='top'] .tippy-arrow
+  border-top-color: #666a78
+.tippy-tooltip.bg-light-theme[data-placement^='top'] .tippy-arrow
+  border-top-color: #edf2f7
+
+.tippy-tooltip.bg-medium-theme[data-placement^='bottom'] .tippy-arrow
+  border-bottom-color: #a8b9ce
+.tippy-tooltip.bg-strong-theme[data-placement^='bottom'] .tippy-arrow
+  border-bottom-color: #666a78
+.tippy-tooltip.bg-light-theme[data-placement^='bottom'] .tippy-arrow
+  border-bottom-color: #edf2f7
+
+.tippy-tooltip.bg-medium-theme[data-placement^='left'] .tippy-arrow
+  border-left-color: #a8b9ce
+.tippy-tooltip.bg-strong-theme[data-placement^='left'] .tippy-arrow
+  border-left-color: #666a78
+.tippy-tooltip.bg-light-theme[data-placement^='left'] .tippy-arrow
+  border-left-color: #edf2f7
+
+.tippy-tooltip.bg-medium-theme[data-placement^='right'] .tippy-arrow
+  border-right-color: #a8b9ce
+.tippy-tooltip.bg-strong-theme[data-placement^='right'] .tippy-arrow
+  border-right-color: #666a78
+.tippy-tooltip.bg-light-theme[data-placement^='right'] .tippy-arrow
+  border-right-color: #edf2f7
 @import "../components/pages/home/style"
 @import "../components/pages/deal/style"
+@import "../components/pages/choice/style"
+@import "../components/pages/roulette/style"
 
-@import "media"
-// Всегда в конце

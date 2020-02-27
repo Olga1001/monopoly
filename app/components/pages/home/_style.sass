@@ -13,6 +13,17 @@
   width: calc(100% - 90.87vh - 20.2vh)
   padding-right: 3.2vh
   padding-bottom: 1.64vh
+  &-timer
+    position: relative
+    &_count
+      color: #666a78
+      font-family: "FuturaPT-Demi", sans-serif
+      font-size: 3vh
+      line-height: 1
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: 4.3vh
 .right
   min-width: 20.2vh
   width: calc(100% - 90.87vh - 26.05vh)
@@ -84,6 +95,11 @@
   opacity: 0
   pointer-events: none
   transition: all 0.3s ease
+  p
+    position: relative
+    &:hover
+      .tooltip-left1, .tooltip-right1, .tooltip-top1, .tooltip-bottom1
+        opacity: 1
   &:before, &:after
     content: ''
     position: absolute
@@ -277,6 +293,7 @@
   justify-content: center
   align-items: center
   position: absolute
+  z-index: 3
 .balls
   &-item
     width: 2.24vh
@@ -665,6 +682,7 @@ button.btn-action
     overflow-y: auto
     padding: 0.8vh
     height: 100%
+    min-height: 4vh
   &-send
     position: absolute
     right: 0
@@ -717,25 +735,31 @@ button.btn-action
   top: 0
   padding: 0.46vh
   cursor: pointer
+  &:hover
+    .settings-menu
+      opacity: 1
+      pointer-events: auto
   &-item
-    width: 0.26vh
-    height: 0.26vh
+    width: 0.35vh
+    height: 0.35vh
     margin: 0.13vh
-    border-radius: 0.13vh
+    border-radius: 50%
     background-color: #d7e0e9
     position: relative
     z-index: 3
   &-menu
     position: absolute
-    left: 0
+    right: 0
     top: 0
     z-index: 2
     border-radius: 0.66vh
     box-shadow: 0 0 10px 0 rgba(170, 196, 223, 0.42)
     background-color: #ffffff
-    width: max-content
+    width: fit-content
     padding: 0.72vh 0.9vh 1vh 1.5vh
-    display: none
+    opacity: 0
+    pointer-events: none
+    min-width: 11.2vh
   &-list
     font-family: "FuturaPT-Book", sans-serif
     font-size: 1.32vh
@@ -810,6 +834,13 @@ button.btn-action
           border-width: 0 0.4vh 0 0
           padding-left: 1.98vh
           background: #edf2f7
+        &.show
+          .player-info
+            background: #ffffff
+            padding-left: 0.4vh
+          .player-col
+            width: fit-content
+
     &.height
       .player-info
         height: auto
@@ -819,8 +850,6 @@ button.btn-action
       .player-info
         opacity: 1
         margin-top: 0
-        display: flex
-        flex-wrap: wrap
         padding-left: 0
         height: auto
         transition: opacity 0.3s ease
@@ -830,6 +859,11 @@ button.btn-action
         span
           width: auto
           margin-right: 0.66vh
+      .player-info_container
+        max-width: 100%
+        display: flex
+        flex-wrap: wrap
+
 
     &:last-child
       margin-bottom: 0
@@ -911,6 +945,8 @@ button.btn-action
     opacity: 0
     transition: all 0.3s ease
     pointer-events: none
+    &_container
+      max-width: 35vh
 .orange
   background-color: #fe8a01
 .purple
