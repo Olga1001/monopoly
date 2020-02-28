@@ -22,13 +22,14 @@ $(document).ready(function () {
         $(this).toggleClass('height');
     });
 
-
-    let widthPlace = $(".player-item").width() - $(".player-col").width();
-    if($(".player-info_container").width() >= widthPlace){
-        $(".player-item").removeClass('show');
-    } else {
-        $(".player-item").addClass('show');
-    }
+    window.addEventListener('resize', () => {
+        let widthPlace = $(".player-item").width() - $(".player-col").width();
+        if($(".player-info_container").width() <= widthPlace){
+            $(".player-item").addClass('show');
+        } else {
+            $(".player-item").removeClass('show');
+        }
+    });
 
     tippy('.card-price', {
         content: 'Lorem ipsum dolor sit amet ',

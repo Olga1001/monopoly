@@ -55,6 +55,7 @@
   width: 3px
   border-radius: 3px
   background-color: #f6f7fa
+  -moz-appearance: none !important
 *::-webkit-scrollbar-thumb
   border-radius: 2px
   background-color: #767c8f
@@ -104,6 +105,9 @@ body
   line-height: normal
   background-color: #edf2f7
   font-family: "FuturaPT-Book", sans-serif
+  overflow-y: hidden
+html
+  //height: calc(100vh - 60px)
 img
   display: block
   width: 100%
@@ -122,6 +126,9 @@ input, textarea
   letter-spacing: normal
   color: #4f5567
   appearance: none
+  &:required
+    box-shadow: none
+    border: none
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
   -webkit-appearance: none
   margin: 0
