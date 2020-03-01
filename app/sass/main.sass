@@ -163,10 +163,13 @@ button
   color: #4f5567
   position: relative
   transition: all 0.3s ease
+  &-text
+    z-index: 1
   svg
     width: 3.95vh
     display: block
     margin-right: 0.72vh
+    z-index: 1
   &-cube
     height: 3.1vh
   &-deals
@@ -188,6 +191,16 @@ button
     background-image: linear-gradient(to left, #e53b63, #fe6542)
     transition: all 0.3s ease
     z-index: -1
+    &-main
+      position: absolute
+      left: 0
+      top: 0
+      height: calc(100% + 0.53vh + 0.53vh)
+      margin: -0.53vh
+      border-radius: 1.32vh
+      width: calc(100% + 0.53vh + 0.53vh)
+      background-image: linear-gradient(to left, #e53b63, #fe6542)
+      opacity: 0
   &:focus, &.active
     box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21)
     background-image: linear-gradient(to left, #e53b63, #fe6542)
@@ -200,6 +213,8 @@ button
       border-color: transparent
     .btn-active
       opacity: 0.2
+    .btn-active-main
+      opacity: 1
     &:before, &:after
       content: ''
       position: absolute

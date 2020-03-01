@@ -15,7 +15,10 @@ $(document).ready(function () {
         $(this).toggleClass('active').siblings().removeClass('active');
     });
     $('.close').click(function() {
-        $(this).closest(".chat").hide();
+        $(this).toggleClass('active');
+        $(".chat-window").slideToggle(300);
+        $(".chat-bottom").slideToggle(300);
+        $(".chat-tab-message").slideToggle(300);
     });
 
     $('.player-item, .player-item.height').hover(function() {

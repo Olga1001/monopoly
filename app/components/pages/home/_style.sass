@@ -304,6 +304,7 @@
   &-left, &-right
     display: flex
     flex-direction: column
+    z-index: 2
   &-center
     display: flex
     flex-direction: column
@@ -610,19 +611,37 @@ button.btn-action
     background-color: #d7e0e9
     width: 1.2vh
     height: 0.26vh
+    transition: all 0.3s ease
   &:after
     height: 1.2vh
     width: 0.26vh
+  &.active
+    &:before, &:after
+      transform: translate(-50%, -50%) rotate(0)
 .chat
   display: flex
   flex-direction: column
   align-items: flex-end
+  position: relative
+  z-index: 1
+  &-shadow_red
+    position: absolute
+    right: -3.9vh
+    bottom: -6.6vh
+    width: 63.5vh
+    height: 31.6vh
+    display: none
+    z-index: 0
   &-container
     background: #ffffff
     border-radius: 1.32vh 0 1.32vh 1.32vh
+    width: 100%
   &-top, &-tabs
     display: flex
     align-items: flex-end
+  &-top
+    background: #ffffff
+    border-radius: 1.32vh 0 0 0
   &-tabs
     width: calc(100% - 2vh)
   &-left
@@ -659,10 +678,27 @@ button.btn-action
     width: 100%
     cursor: pointer
     padding-bottom: 0.33vh
+    position: relative
+    height: 5vh
     &.active
       border-color: #fa5555
+    &-message
+      position: absolute
+      left: 50%
+      top: -0.95vh
+      font-size: 1.2vh
+      font-family: "FuturaPT-Demi", sans-serif
+      min-width: 1.9vh
+      width: fit-content
+      height: 1.9vh
+      border-radius: 0.6vh
+      padding: 0 0.2vh
+      text-align: center
+      color: #fdfdfd
+      transform: translateX(-50%)
   &-window
     padding: 1.3vh 1vh
+    display: none
   &-messages
     height: 30vh
     overflow: hidden
@@ -673,6 +709,7 @@ button.btn-action
     padding: 1.4vh 1.9vh 1.4vh 3.48vh
     max-height: 7vh
     height: 100%
+    display: none
     &-row
       position: relative
       display: flex

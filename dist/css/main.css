@@ -209,10 +209,13 @@ button {
   position: relative;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+  .btn-text {
+    z-index: 1; }
   .btn svg {
     width: 3.95vh;
     display: block;
-    margin-right: 0.72vh; }
+    margin-right: 0.72vh;
+    z-index: 1; }
   .btn-cube {
     height: 3.1vh; }
   .btn-deals {
@@ -238,6 +241,17 @@ button {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index: -1; }
+    .btn-active-main {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: calc(100% + 0.53vh + 0.53vh);
+      margin: -0.53vh;
+      border-radius: 1.32vh;
+      width: calc(100% + 0.53vh + 0.53vh);
+      background-image: -webkit-gradient(linear, right top, left top, from(#e53b63), to(#fe6542));
+      background-image: linear-gradient(to left, #e53b63, #fe6542);
+      opacity: 0; }
   .btn:focus, .btn.active {
     -webkit-box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21);
             box-shadow: 0 0 5px 0 rgba(170, 196, 223, 0.21);
@@ -253,6 +267,8 @@ button {
       border-color: transparent; }
     .btn:focus .btn-active, .btn.active .btn-active {
       opacity: 0.2; }
+    .btn:focus .btn-active-main, .btn.active .btn-active-main {
+      opacity: 1; }
     .btn:focus:before, .btn:focus:after, .btn.active:before, .btn.active:after {
       content: '';
       position: absolute;
@@ -859,7 +875,8 @@ button {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  z-index: 2; }
 
 .col-center {
   display: -webkit-box;
@@ -1209,10 +1226,15 @@ button.btn-action {
             transform: translate(-50%, -50%) rotate(45deg);
     background-color: #d7e0e9;
     width: 1.2vh;
-    height: 0.26vh; }
+    height: 0.26vh;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
   .close:after {
     height: 1.2vh;
     width: 0.26vh; }
+  .close.active:before, .close.active:after {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0); }
 
 .chat {
   display: -webkit-box;
@@ -1224,10 +1246,21 @@ button.btn-action {
           flex-direction: column;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: flex-end; }
+          align-items: flex-end;
+  position: relative;
+  z-index: 1; }
+  .chat-shadow_red {
+    position: absolute;
+    right: -3.9vh;
+    bottom: -6.6vh;
+    width: 63.5vh;
+    height: 31.6vh;
+    display: none;
+    z-index: 0; }
   .chat-container {
     background: #ffffff;
-    border-radius: 1.32vh 0 1.32vh 1.32vh; }
+    border-radius: 1.32vh 0 1.32vh 1.32vh;
+    width: 100%; }
   .chat-top, .chat-tabs {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1235,6 +1268,9 @@ button.btn-action {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end; }
+  .chat-top {
+    background: #ffffff;
+    border-radius: 1.32vh 0 0 0; }
   .chat-tabs {
     width: calc(100% - 2vh); }
   .chat-left {
@@ -1285,11 +1321,31 @@ button.btn-action {
     border-bottom: 0.26vh solid #d7e0e9;
     width: 100%;
     cursor: pointer;
-    padding-bottom: 0.33vh; }
+    padding-bottom: 0.33vh;
+    position: relative;
+    height: 5vh; }
     .chat-tab.active {
       border-color: #fa5555; }
+    .chat-tab-message {
+      position: absolute;
+      left: 50%;
+      top: -0.95vh;
+      font-size: 1.2vh;
+      font-family: "FuturaPT-Demi", sans-serif;
+      min-width: 1.9vh;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      height: 1.9vh;
+      border-radius: 0.6vh;
+      padding: 0 0.2vh;
+      text-align: center;
+      color: #fdfdfd;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
   .chat-window {
-    padding: 1.3vh 1vh; }
+    padding: 1.3vh 1vh;
+    display: none; }
   .chat-messages {
     height: 30vh;
     overflow: hidden;
@@ -1299,7 +1355,8 @@ button.btn-action {
     border-top: 0.26vh solid #d7e0e9;
     padding: 1.4vh 1.9vh 1.4vh 3.48vh;
     max-height: 7vh;
-    height: 100%; }
+    height: 100%;
+    display: none; }
     .chat-bottom-row {
       position: relative;
       display: -webkit-box;
