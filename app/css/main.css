@@ -914,12 +914,12 @@ button {
           bottom: calc(100% + 0.26px);
           left: -0.26vh;
           border-width: 1.6vh 0 0 1.7vh;
-          border-color: transparent transparent transparent  #d7e0e9; }
+          border-color: transparent transparent transparent #d7e0e9; }
         .col-center .row:first-child .tooltip:after {
           bottom: calc(100% - 0.52vh);
           left: 0;
           border-width: 1.5vh 0 0 1.68vh;
-          border-color: transparent transparent transparent #ffffff; }
+          border-color: transparent transparent transparent #d7e0e9; }
       .col-center .row:first-child .card:nth-last-child(2) .tooltip, .col-center .row:first-child .card:last-child .tooltip {
         left: auto;
         right: 0;
@@ -958,7 +958,7 @@ button {
           top: calc(100% - 0.5vh);
           left: 0;
           border-width: 1.5vh 1.68vh 0 0;
-          border-color: #ffffff transparent transparent transparent; }
+          border-color: #d7e0e9 transparent transparent transparent; }
       .col-center .row:last-child .card:last-child .tooltip, .col-center .row:last-child .card:nth-last-child(2) .tooltip {
         left: auto;
         right: 0;
@@ -967,7 +967,7 @@ button {
           left: auto;
           right: -0.26vh;
           border-width: 0 1.6vh 1.7vh 0;
-          border-color: transparent  #d7e0e9 transparent transparent; }
+          border-color: transparent #d7e0e9 transparent transparent; }
         .col-center .row:last-child .card:last-child .tooltip:after, .col-center .row:last-child .card:nth-last-child(2) .tooltip:after {
           left: auto;
           right: 0;
@@ -1028,7 +1028,7 @@ button {
   .col-left .card:nth-child(3) .tooltip:after, .col-left .card:nth-child(4) .tooltip:after {
     top: 0;
     border-width: 0 1.5vh 1.68vh 0;
-    border-color: transparent #ffffff transparent transparent; }
+    border-color: transparent #d7e0e9 transparent transparent; }
 
 .col-right .card-home {
   right: 0;
