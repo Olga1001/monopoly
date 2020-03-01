@@ -97,15 +97,13 @@
   transition: all 0.3s ease
   p
     position: relative
-    &:hover
-      .tooltip-left1, .tooltip-right1, .tooltip-top1, .tooltip-bottom1
-        opacity: 1
   &:before, &:after
     content: ''
     position: absolute
+    border-style: solid
     width: 0
     height: 0
-    border-style: solid
+    display: flex
   &-title,  &-name, &-text, &-price, &-percent
     color: $color1
     font-family: "FuturaPT-Demi", sans-serif
@@ -304,7 +302,6 @@
   &-left, &-right
     display: flex
     flex-direction: column
-    z-index: 2
   &-center
     display: flex
     flex-direction: column
@@ -333,8 +330,8 @@
           &:after
             bottom: calc(100% - 0.52vh)
             left: 0
-            border-width: 1.5vh 0 0 1.68vh
-            border-color: transparent transparent transparent $color4
+            border-width: 1.45vh 0 0 1.6vh
+            border-color: transparent transparent transparent $color2
         .card
           &:nth-last-child(2), &:last-child
             .tooltip
@@ -349,7 +346,7 @@
               &:after
                 left: auto
                 right: 0
-                border-width: 0 0 1.5vh 1.68vh
+                border-width: 0 0 1.45vh 1.6vh
                 border-color: transparent transparent $color2 transparent
           .balls-position
             width: 100%
@@ -374,8 +371,8 @@
           &:after
             top: calc(100% - 0.5vh)
             left: 0
-            border-width: 1.5vh 1.68vh 0 0
-            border-color: $color4 transparent transparent transparent
+            border-width: 1.45vh 1.6vh 0 0
+            border-color: $color2 transparent transparent transparent
         .card
           &:last-child, &:nth-last-child(2)
             .tooltip
@@ -390,7 +387,7 @@
               &:after
                 left: auto
                 right: 0
-                border-width: 0 1.5vh 1.68vh 0
+                border-width: 0 1.45vh 1.6vh 0
                 border-color: transparent $color2 transparent transparent
           .balls-position
             width: 100%
@@ -423,7 +420,7 @@
       &:after
         right: calc(100% - 0.52vh)
         bottom: 0
-        border-width: 0 0 1.5vh 1.68vh
+        border-width: 0 0 1.45vh 1.6vh
         border-color: transparent transparent $color2 transparent
     .card
       &:first-child
@@ -442,8 +439,8 @@
             border-color: transparent $color4 transparent transparent
           &:after
             top: 0
-            border-width: 0 1.5vh 1.68vh 0
-            border-color: transparent $color4 transparent transparent
+            border-width: 0 1.45vh 1.6vh 0
+            border-color: transparent $color2 transparent transparent
 
   &-right
     .card-home
@@ -467,7 +464,7 @@
           left: calc(100% - 0.52vh)
           top: 0
           bottom: auto
-          border-width: 1.68vh 1.5vh 0 0
+          border-width: 1.6vh 1.45vh 0 0
           border-color: $color2 transparent transparent transparent
     .tooltip
       right: calc(100% + 1vh)
@@ -476,12 +473,12 @@
       &:before
         left: 100%
         bottom: -0.26vh
-        border-width: 1.7vh 0 0 1.6vh
+        border-width: 1.6vh 0 0 1.7vh
         border-color: transparent transparent transparent $color4
       &:after
         left: calc(100% - 0.52vh)
         bottom: 0
-        border-width: 1.68vh 0 0 1.5vh
+        border-width: 1.45vh 0 0 1.6vh
         border-color: transparent transparent transparent $color2
     .balls-position
       &:first-child
@@ -624,6 +621,8 @@ button.btn-action
   align-items: flex-end
   position: relative
   z-index: 1
+  overflow: hidden
+  border-radius: 1.32vh
   &-shadow_red
     position: absolute
     right: -3.9vh
@@ -639,9 +638,6 @@ button.btn-action
   &-top, &-tabs
     display: flex
     align-items: flex-end
-  &-top
-    background: $color2
-    border-radius: 1.32vh 0 0 0
   &-tabs
     width: calc(100% - 2vh)
   &-left
@@ -661,11 +657,10 @@ button.btn-action
     display: flex
     align-items: center
     justify-content: center
-    border-radius: 0 0 1.32vh 0
+    border-radius: 0 0  1.32vh 0
   &-tab
     font-family: "FuturaPT-Demi", sans-serif
     display: flex
-    align-items: flex-end
     justify-content: center
     font-size: 1.5vh
     font-weight: normal
@@ -677,11 +672,16 @@ button.btn-action
     border-bottom: 0.26vh solid $color4
     width: 100%
     cursor: pointer
-    padding-bottom: 0.33vh
     position: relative
     height: 5vh
-    &.active
-      border-color: #fa5555
+    border-radius: 1.32vh 0 0 0
+    align-items: center
+    padding: 0
+    &.show
+      padding-bottom: 0.33vh
+      align-items: flex-end
+      &.active
+        border-color: #fa5555
     &-message
       position: absolute
       left: 50%

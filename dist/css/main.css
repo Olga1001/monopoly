@@ -606,14 +606,15 @@ button {
   transition: all 0.3s ease; }
   .tooltip p {
     position: relative; }
-    .tooltip p:hover .tooltip-left1, .tooltip p:hover .tooltip-right1, .tooltip p:hover .tooltip-top1, .tooltip p:hover .tooltip-bottom1 {
-      opacity: 1; }
   .tooltip:before, .tooltip:after {
     content: '';
     position: absolute;
+    border-style: solid;
     width: 0;
     height: 0;
-    border-style: solid; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .tooltip-title, .tooltip-name, .tooltip-text, .tooltip-price, .tooltip-percent {
     color: #4f5567;
     font-family: "FuturaPT-Demi", sans-serif;
@@ -875,8 +876,7 @@ button {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
-  z-index: 2; }
+          flex-direction: column; }
 
 .col-center {
   display: -webkit-box;
@@ -918,8 +918,8 @@ button {
         .col-center .row:first-child .tooltip:after {
           bottom: calc(100% - 0.52vh);
           left: 0;
-          border-width: 1.5vh 0 0 1.68vh;
-          border-color: transparent transparent transparent #d7e0e9; }
+          border-width: 1.45vh 0 0 1.6vh;
+          border-color: transparent transparent transparent #ffffff; }
       .col-center .row:first-child .card:nth-last-child(2) .tooltip, .col-center .row:first-child .card:last-child .tooltip {
         left: auto;
         right: 0;
@@ -932,7 +932,7 @@ button {
         .col-center .row:first-child .card:nth-last-child(2) .tooltip:after, .col-center .row:first-child .card:last-child .tooltip:after {
           left: auto;
           right: 0;
-          border-width: 0 0 1.5vh 1.68vh;
+          border-width: 0 0 1.45vh 1.6vh;
           border-color: transparent transparent #ffffff transparent; }
       .col-center .row:first-child .card .balls-position {
         width: 100%;
@@ -957,8 +957,8 @@ button {
         .col-center .row:last-child .tooltip:after {
           top: calc(100% - 0.5vh);
           left: 0;
-          border-width: 1.5vh 1.68vh 0 0;
-          border-color: #d7e0e9 transparent transparent transparent; }
+          border-width: 1.45vh 1.6vh 0 0;
+          border-color: #ffffff transparent transparent transparent; }
       .col-center .row:last-child .card:last-child .tooltip, .col-center .row:last-child .card:nth-last-child(2) .tooltip {
         left: auto;
         right: 0;
@@ -971,7 +971,7 @@ button {
         .col-center .row:last-child .card:last-child .tooltip:after, .col-center .row:last-child .card:nth-last-child(2) .tooltip:after {
           left: auto;
           right: 0;
-          border-width: 0 1.5vh 1.68vh 0;
+          border-width: 0 1.45vh 1.6vh 0;
           border-color: transparent #ffffff transparent transparent; }
       .col-center .row:last-child .card .balls-position {
         width: 100%;
@@ -1009,7 +1009,7 @@ button {
   .col-left .tooltip:after {
     right: calc(100% - 0.52vh);
     bottom: 0;
-    border-width: 0 0 1.5vh 1.68vh;
+    border-width: 0 0 1.45vh 1.6vh;
     border-color: transparent transparent #ffffff transparent; }
 
 .col-left .card:first-child .balls-position:nth-child(2) {
@@ -1027,8 +1027,8 @@ button {
     border-color: transparent #d7e0e9 transparent transparent; }
   .col-left .card:nth-child(3) .tooltip:after, .col-left .card:nth-child(4) .tooltip:after {
     top: 0;
-    border-width: 0 1.5vh 1.68vh 0;
-    border-color: transparent #d7e0e9 transparent transparent; }
+    border-width: 0 1.45vh 1.6vh 0;
+    border-color: transparent #ffffff transparent transparent; }
 
 .col-right .card-home {
   right: 0;
@@ -1051,7 +1051,7 @@ button {
     left: calc(100% - 0.52vh);
     top: 0;
     bottom: auto;
-    border-width: 1.68vh 1.5vh 0 0;
+    border-width: 1.6vh 1.45vh 0 0;
     border-color: #ffffff transparent transparent transparent; }
 
 .col-right .tooltip {
@@ -1061,12 +1061,12 @@ button {
   .col-right .tooltip:before {
     left: 100%;
     bottom: -0.26vh;
-    border-width: 1.7vh 0 0 1.6vh;
+    border-width: 1.6vh 0 0 1.7vh;
     border-color: transparent transparent transparent #d7e0e9; }
   .col-right .tooltip:after {
     left: calc(100% - 0.52vh);
     bottom: 0;
-    border-width: 1.68vh 0 0 1.5vh;
+    border-width: 1.45vh 0 0 1.6vh;
     border-color: transparent transparent transparent #ffffff; }
 
 .col-right .balls-position:first-child {
@@ -1248,7 +1248,9 @@ button.btn-action {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 1.32vh; }
   .chat-shadow_red {
     position: absolute;
     right: -3.9vh;
@@ -1268,9 +1270,6 @@ button.btn-action {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end; }
-  .chat-top {
-    background: #ffffff;
-    border-radius: 1.32vh 0 0 0; }
   .chat-tabs {
     width: calc(100% - 2vh); }
   .chat-left {
@@ -1299,15 +1298,12 @@ button.btn-action {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    border-radius: 0 0 1.32vh 0; }
+    border-radius: 0 0  1.32vh 0; }
   .chat-tab {
     font-family: "FuturaPT-Demi", sans-serif;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1321,11 +1317,20 @@ button.btn-action {
     border-bottom: 0.26vh solid #d7e0e9;
     width: 100%;
     cursor: pointer;
-    padding-bottom: 0.33vh;
     position: relative;
-    height: 5vh; }
-    .chat-tab.active {
-      border-color: #fa5555; }
+    height: 5vh;
+    border-radius: 1.32vh 0 0 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0; }
+    .chat-tab.show {
+      padding-bottom: 0.33vh;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end; }
+      .chat-tab.show.active {
+        border-color: #fa5555; }
     .chat-tab-message {
       position: absolute;
       left: 50%;

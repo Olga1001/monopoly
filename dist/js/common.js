@@ -16,6 +16,7 @@ $(document).ready(function () {
     });
     $('.close').click(function() {
         $(this).toggleClass('active');
+        $(".chat-tab").toggleClass('show');
         $(".chat-window").slideToggle(300);
         $(".chat-bottom").slideToggle(300);
         $(".chat-tab-message").slideToggle(300);
