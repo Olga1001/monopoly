@@ -96,18 +96,22 @@
   pointer-events: none
   transition: all 0.3s ease
   z-index: 99
+  height: 40vh
   &-container
     padding: 2vh 2.5vh 1.5vh 0
     border-radius: 1.32vh
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
   p
     position: relative
   &:before
     content: ''
     position: absolute
-    height: 40.3vh
+    height: 41.3vh
     width: 100%
-    min-width: 27.5vh
-    background: url("../img/popup.svg") no-repeat center/27.5vh 40.3vh
+    min-width: 28.5vh
+    background: url("../img/popup.svg") no-repeat center/28.5vh 41.3vh
     z-index: 0
   &-title,  &-name, &-text, &-price, &-percent
     color: $color1
@@ -325,10 +329,11 @@
         min-width: 25vh
         &:before
           bottom: 0
-          left: -2.1vh
-          background: url(../img/popup2.svg) no-repeat left top/29.5vh 42.3vh
-          height: 42.3vh
-          min-width: 27.5vh
+          top: 0
+          left: -2.5vh
+          background: url(../img/popup2.svg) no-repeat left bottom/30.5vh 43.3vh
+          height: 43.3vh
+          min-width: 30.5vh
         &-container
           padding: 2vh
       &:first-child
@@ -336,21 +341,27 @@
         .card-home
           padding-top: calc(100% + 0.13vh + 0.4vh)
         .tooltip
-          top: calc(100% + 1.6vh)
+          top: calc(100% + 2.2vh)
           left: 0
           min-width: 25vh
           &:before
             bottom: 0
-            left: -2.1vh
+            left: -2.5vh
+            top: auto
+            background: url(../img/popup2.svg) no-repeat left top/30.5vh 43.3vh
+            height: 43.3vh
+            min-width: 30.5vh
         .card
           &:nth-last-child(2), &:last-child
             .tooltip
               left: auto
-              right: 0.3vh
+              right: 0
               border-radius: 1.32vh  0 1.32vh 1.32vh
               &:before
+                right: -2.5vh
+                left: auto
                 transform: scale(-1,1)
-                background: url(../img/popup2.svg) no-repeat right top/29.5vh 42.3vh
+                background: url(../img/popup2.svg) no-repeat right top/30.5vh 43.3vh
           .balls-position
             width: 100%
             bottom: 100%
@@ -363,13 +374,14 @@
           bottom: 0
           padding-bottom: calc(100% + 0.13vh + 0.4vh)
         .tooltip
-          bottom: calc(100% + 1.6vh)
+          top: auto
+          bottom: calc(100% + 2.2vh)
           left: 0
           &:before
             top: 0
-            left: -0.26vh
+            left: -2.5vh
             transform: scale(1,-1)
-            background: url(../img/popup2.svg) no-repeat right top/29.5vh 42.3vh
+            background: url(../img/popup2.svg) no-repeat right top/30.5vh 43.3vh
         .card
           &:last-child, &:nth-last-child(2)
             .tooltip
@@ -378,7 +390,7 @@
               border-radius: 1.32vh 1.32vh 0 1.32vh
               &:before
                 left: auto
-                right: -0.26vh
+                right: -2.5vh
                 transform: scale(-1,-1)
           .balls-position
             width: 100%
@@ -400,9 +412,8 @@
       width: calc(100% + 2.5vh)
       padding-left: calc(100% + 0.13vh)
     .tooltip
-      left: calc(100% + 3.5vh)
+      left: calc(100% + 4.2vh)
       bottom: -0.1vh
-      border-radius: 1.32vh 1.32vh 1.32vh 0
       &:before
         right: 0
         bottom: -0.6vh
@@ -416,9 +427,9 @@
         .tooltip
           bottom: auto
           top: 0
-          border-radius: 0 1.32vh 1.32vh 1.32vh
           &:before
             top: -0.26vh
+            bottom: auto
             transform: scale(1,-1)
 
   &-right
@@ -438,7 +449,7 @@
           top: -0.26vh
           transform: scale(-1,-1)
     .tooltip
-      right: calc(100% + 3.5vh)
+      right: calc(100% + 4.2vh)
       bottom: -0.4vh
       border-radius: 1.32vh 1.32vh 0 1.32vh
       &:before
